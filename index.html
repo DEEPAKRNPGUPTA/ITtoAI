@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>90-Day AI Career Transformation | TrainUProfessional</title>
+<style>
+  :root{
+    --bg:#09111f; --panel:#101a2d; --panel2:#14213a; --text:#eef4ff; --muted:#9fb0ca;
+    --accent:#76e0c5; --accent2:#7ab8ff; --gold:#ffcf6a; --danger:#ff8f8f;
+    --border:rgba(255,255,255,.09); --shadow:0 18px 45px rgba(0,0,0,.25);
+  }
+  body.light{
+    --bg:#eef4f8; --panel:#ffffff; --panel2:#f6f9fc; --text:#172033; --muted:#64748b;
+    --accent:#087f6d; --accent2:#2b6cb0; --gold:#a36b00; --danger:#b42318;
+    --border:rgba(15,23,42,.10); --shadow:0 16px 35px rgba(15,23,42,.10);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:
+    radial-gradient(circle at 15% -10%,rgba(118,224,197,.13),transparent 30%),
+    radial-gradient(circle at 90% 0%,rgba(122,184,255,.13),transparent 28%),
+    var(--bg); color:var(--text); font-family:Inter,Segoe UI,Arial,sans-serif; line-height:1.55}
+  a{color:inherit}
+  .wrap{width:min(1180px,92vw);margin:auto}
+  header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;gap:18px;min-height:70px}
+  .brand{font-weight:850;letter-spacing:.2px}
+  .brand small{display:block;color:var(--muted);font-size:.72rem;font-weight:600}
+  .links{margin-left:auto;display:flex;flex-wrap:wrap;gap:7px}
+  .links a,.btn{border:1px solid var(--border);background:var(--panel);padding:8px 11px;border-radius:999px;text-decoration:none;font-size:.86rem;cursor:pointer;color:var(--text)}
+  .hero{padding:42px 0 20px;display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:center}
+  .eyebrow{display:inline-block;padding:7px 11px;border:1px solid var(--border);border-radius:999px;color:var(--accent);font-weight:800;font-size:.82rem}
+  h1{font-size:clamp(2.4rem,4.8vw,4.6rem);line-height:1.02;margin:14px 0 12px;letter-spacing:-.045em;max-width:720px}
+  .grad{background:linear-gradient(90deg,var(--accent),var(--accent2),var(--gold));-webkit-background-clip:text;color:transparent}
+  .lead{font-size:1rem;color:var(--muted);max-width:720px}
+  .hero-card,.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow)}
+  .hero-card{padding:22px}
+  .metric-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .metric{padding:14px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid var(--border)}
+  .metric b{font-size:1.45rem;display:block}
+  .metric span{font-size:.78rem;color:var(--muted)}
+  .progress{height:9px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:10px}
+  .progress > div{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:.3s}
+  section{padding:36px 0}
+  .section-title{display:flex;gap:12px;align-items:end;justify-content:space-between;margin-bottom:18px}
+  .section-title h2{margin:0;font-size:clamp(1.7rem,3vw,2.7rem);letter-spacing:-.035em}
+  .section-title p{margin:0;color:var(--muted);max-width:620px}
+  .pill-row{display:flex;flex-wrap:wrap;gap:9px}
+  .pill{padding:9px 12px;border-radius:999px;background:var(--panel);border:1px solid var(--border);font-size:.84rem}
+  .flow{display:grid;grid-template-columns:repeat(9,1fr);gap:8px;align-items:center}
+  .flow .node{padding:14px 8px;text-align:center;border:1px solid var(--border);border-radius:16px;background:var(--panel);font-size:.78rem;font-weight:700;min-height:70px;display:grid;place-items:center}
+  .arrow{text-align:center;color:var(--muted)}
+  .weeks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  details.week{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--border);border-radius:20px;overflow:hidden}
+  details.week[open]{box-shadow:var(--shadow)}
+  summary{list-style:none;padding:18px;cursor:pointer}
+  summary::-webkit-details-marker{display:none}
+  .wk{font-size:.72rem;color:var(--accent);font-weight:900;text-transform:uppercase;letter-spacing:.12em}
+  summary h3{margin:5px 0 3px;font-size:1.05rem}
+  summary p{margin:0;color:var(--muted);font-size:.82rem}
+  .inside{padding:0 18px 18px;border-top:1px solid var(--border)}
+  .inside h4{margin:15px 0 5px}
+  .inside ul{margin:5px 0 0;padding-left:18px;color:var(--muted)}
+  .check{display:flex;gap:9px;align-items:center;margin-top:14px;font-weight:700;font-size:.84rem}
+  input[type=checkbox]{width:18px;height:18px;accent-color:var(--accent)}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .card{padding:22px}
+  .card h3{margin-top:0}
+  .tag{font-size:.72rem;font-weight:900;padding:5px 8px;border-radius:999px;background:rgba(118,224,197,.10);color:var(--accent);border:1px solid var(--border)}
+  .stack{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}
+  .stack span{font-size:.72rem;padding:5px 8px;border-radius:9px;background:rgba(255,255,255,.04);border:1px solid var(--border)}
+  .project-flow{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}
+  .project-flow span{background:var(--panel2);padding:7px 10px;border-radius:12px;border:1px solid var(--border);font-size:.78rem}
+  .outcomes{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .outcomes .card{min-height:150px}
+  .num{font-size:2rem;color:var(--gold);font-weight:900}
+  .roadmap{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+  .roadmap .card{padding:16px;text-align:center}
+  .roadmap b{display:block;margin-bottom:5px}
+  .roadmap small{color:var(--muted)}
+  footer{padding:38px 0 60px;color:var(--muted);text-align:center}
+  .floating{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:8px;z-index:30}
+  .floating .btn{box-shadow:var(--shadow)}
+  @media(max-width:900px){
+    .hero,.grid2{grid-template-columns:1fr}
+    .weeks{grid-template-columns:1fr 1fr}
+    .flow{grid-template-columns:1fr}
+    .arrow{transform:rotate(90deg)}
+    .outcomes{grid-template-columns:1fr 1fr}
+    .roadmap{grid-template-columns:repeat(3,1fr)}
+    .links a{display:none}
+  }
+  @media(max-width:600px){
+    .weeks,.outcomes,.roadmap{grid-template-columns:1fr}
+    h1{font-size:2.7rem}
+  }
+  @media print{
+    header,.floating{display:none!important}
+    body{background:white;color:#111}
+    .hero-card,.card,details.week{box-shadow:none;background:white;color:#111;border-color:#ddd}
+    .lead,.section-title p,.inside ul,summary p,footer{color:#555}
+    details.week{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">TrainUProfessional <small>Leadership • AI • Enterprise Capability</small></div>
+    <nav class="links">
+      <a href="#journey">Journey</a><a href="#weeks">12 Weeks</a><a href="#projects">Projects</a>
+      <a href="#agentic">Agentic AI</a><a href="#portfolio">Portfolio</a>
+      <button class="btn" onclick="toggleTheme()">◐ Theme</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <span class="eyebrow">90-DAY PERSONALIZED AI CAREER TRANSFORMATION</span>
+      <h1>From IT <span class="grad">to Applied AI Engineering</span></h1>
+      <p class="lead">A focused, professional 90-day learning journey for a student with 7 years of IT experience—starting with practical Math and ML, then moving through AI, RAG, tools, agents and a complete agentic business pipeline.</p>
+      <div class="pill-row">
+        <span class="pill">📐 Math for ML</span><span class="pill">🐍 Python + Data</span><span class="pill">📈 Machine Learning</span>
+        <span class="pill">✨ GenAI + RAG</span><span class="pill">🛠 Tool Calling</span><span class="pill">🤖 Agents</span><span class="pill">🔁 Agentic Pipeline</span>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <span class="tag">STUDENT PROFILE</span>
+      <h3>7 Years • IT Deployment Technology</h3>
+      <p style="color:var(--muted)">Leverage deployment, operations and production-system thinking instead of treating the learner as a fresher.</p>
+      <div class="metric-grid">
+        <div class="metric"><b>12</b><span>Weeks</span></div>
+        <div class="metric"><b>2</b><span>Business Projects</span></div>
+        <div class="metric"><b>1</b><span>Agentic Capstone</span></div>
+        <div class="metric"><b id="doneCount">0/12</b><span>Weeks Completed</span></div>
+      </div>
+      <div class="progress"><div id="progressBar"></div></div>
+    </aside>
+  </section>
+
+  <section id="journey">
+    <div class="section-title">
+      <div><h2>Learning Spine</h2><p>Build depth in layers. Every layer produces something usable in the next one.</p></div>
+    </div>
+    <div class="roadmap">
+      <div class="card"><b>01 • Math</b><small>Reason about data</small></div>
+      <div class="card"><b>02 • Python</b><small>Work with data</small></div>
+      <div class="card"><b>03 • ML</b><small>Predict outcomes</small></div>
+      <div class="card"><b>04 • AI</b><small>Understand + advise</small></div>
+      <div class="card"><b>05 • Agents</b><small>Use tools + act</small></div>
+      <div class="card"><b>06 • Pipeline</b><small>Orchestrate work</small></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <div><h2>Business Problem → AI Solution</h2><p>The same thinking pattern is reused in Retail and Automobile manufacturing.</p></div>
+    </div>
+    <div class="flow">
+      <div class="node">Business Problem</div><div class="arrow">→</div>
+      <div class="node">Data</div><div class="arrow">→</div>
+      <div class="node">ML / AI Approach</div><div class="arrow">→</div>
+      <div class="node">Application</div><div class="arrow">→</div>
+      <div class="node">Measure Value</div>
+    </div>
+  </section>
+
+  <section id="weeks">
+    <div class="section-title">
+      <div><h2>12-Week Build Journey</h2><p>Open each week for learning topics, practical work and the weekly evidence to publish.</p></div>
+      <button class="btn" onclick="toggleAll()">Expand / Collapse All</button>
+    </div>
+    <div class="weeks">
+
+      <details class="week"><summary><div class="wk">Week 01</div><h3>Python for AI & Data</h3><p>Refresh only what is needed to build.</p></summary><div class="inside">
+        <h4>Learn</h4><ul><li>Python essentials, functions, collections</li><li>NumPy, Pandas, Jupyter / VS Code</li><li>CSV/Excel data, missing values, filtering, grouping</li><li>Git + GitHub workflow</li></ul>
+        <h4>Build</h4><p>Explore a retail sales and inventory dataset.</p>
+        <label class="check"><input type="checkbox" data-week="1"> Week 1 completed</label>
+      </div></details>
+
+      <details class="week"><summary><div class="wk">Week 02</div><h3>Practical Math for ML</h3><p>Understand the math—not a university math course.</p></summary><div class="inside">
+        <h4>Learn</h4><ul><li>Mean, median, variance, standard deviation</li><li>Probability and distributions</li><li>Correlation and covariance</li><li>Vectors, matrices, dot product</li><li>Loss, error and gradient intuition</li></ul>
+        <h4>Build</h4><p>Visual Math-for-ML notebook using business data.</p>
+        <label class="check"><input type="checkbox" data-week="2"> Week 2 completed</label>
+      </div></details>
+
+      <details class="week"><summary><div class="wk">Week 03</div><h3>Machine Learning Foundations</h3><p>Features → model → prediction → evaluation.</p></summary><div class="inside">
+        <h4>Learn</h4><ul><li>Supervised vs unsupervised learning</li><li>Regression vs classification</li><li>Features, labels, train/test split</li><li>Overfitting, underfitting, leakage</li><li>Linear models and tree models</li></ul>
+        <h4>Build</h4><p>First demand / inventory prediction model.</p>
+        <label class="check"><input type="checkbox" data-week="3"> Week 3 completed</label>
+      </div></details>
+
+      <details class="week"><summary><div class="wk">Week 04</div><h3>Practical ML Engineering</h3><p>Move from notebook experiment to a repeatable pipeline.</p></summary><div class="inside">
+        <h4>Learn</h4><ul><li>Preprocessing and feature engineering</li><li>Time/date features and lag features</li><li>MAE, RMSE, MAPE/WAPE</li><li>Cross-validation and model comparison</li><li>Save/load model and prediction pipeline</li></ul>
+        <h4>Build</h4><p>Demand Prediction V1 with evaluation report.</p>
+        <label class="check"><input type="checkbox" data-week="4"> Week 4 completed</label>
+      </div></details>
+
+      <details class="week"><summary><div class="wk">Week 05</div><h3>Retail Demand Forecasting</h3><p>Project 1 begins.</p></summary><div class="inside">
+        <h4>Learn</h4><ul><li>Sales history, seasonality and trend</li><li>SKU/store demand behavior</li><li>Intermittent / sparse demand</li><li>Forecast horizon and business use</li><li>Shortage and overstock signals</li></ul>
+        <h4>Build</h4><p>Retail demand forecast dashboard and model report.</p>
+        <label class="check"><input type="checkbox" data-week="5"> Week 5 completed</label>
+      </div></details>
+
+      <details class="week"><summary><div class="wk">Week 06</div><h3>Inventory + Cost + Price + Margin</h3><p>Turn prediction into a business decision.</p></summary><div class="inside">
+        <h4>Learn</h4><ul><li>Inventory position and days of supply</li><li>Cost, selling price and margin</li><li>Stockout vs overstock risk</li><li>Promotion / markdown concepts</li><li>Rules + ML working together</li></ul>
+        <h4>Build</h4><p>Retail Inventory & Pricing Decision System.</p>
+        <label class="check"><input type="checkbox" data-week="6"> Week 6 completed</label>
+      </div></details>
+
+      <details class="week"><summary><div class="wk">Week 07</div><h3>ML → Modern AI Bridge</h3><p>Connect traditional ML with LLM systems.</p></summary><div class="inside">
+        <h4>Learn</h4><ul><li>NLP → tokens → embeddings</li><li>Sequence learning and attention</li><li>Transformer intuition</li><li>Pretraining and next-token prediction</li><li>Prompting and structured outputs</li></ul>
+        <h4>Build</h4><p>Small demos explaining each concept visually.</p>
+        <label class="check"><input type="checkbox" data-week="7"> Week 7 completed</label>
+      </div></details>
+
+      <details class="week"><summary><div class="wk">Week 08</div><h3>GenAI, Embeddings & RAG</h3><p>Ground AI in business knowledge.</p></summary><div class="inside">
+        <h4>Learn</h4><ul><li>LLM API interaction</li><li>Embeddings and semantic similarity</li><li>Vector stores and retrieval</li><li>RAG architecture</li><li>Grounding, citations and evaluation</li></ul>
+        <h4>Build</h4><p>Retail AI assistant using product / inventory knowledge.</p>
+        <label class="check"><input type="checkbox" data-week="8"> Week 8 completed</label>
+      </div></details>
+
+      <details class="week"><summary><div class="wk">Week 09</div><h3>AI Tools & Enterprise Actions</h3><p>Move beyond chat.</p></summary><div class="inside">
+        <h4>Learn</h4><ul><li>Function / tool calling</li><li>REST APIs and database tools</li><li>Structured tool schemas</li><li>MCP concepts</li><li>Security and permission boundaries</li></ul>
+        <h4>Build</h4><p>AI assistant that can call inventory, forecast and price tools.</p>
+        <label class="check"><input type="checkbox" data-week="9"> Week 9 completed</label>
+      </div></details>
+
+      <details class="week"><summary><div class="wk">Week 10</div><h3>AI Agents</h3><p>Goal → reason → tool → act → observe.</p></summary><div class="inside">
+        <h4>Learn</h4><ul><li>Agent loop and planning</li><li>Tools, memory and context</li><li>Guardrails and failure handling</li><li>Human-in-the-loop approvals</li><li>When not to use an agent</li></ul>
+        <h4>Build</h4><p>Inventory Decision Agent with approval checkpoint.</p>
+        <label class="check"><input type="checkbox" data-week="10"> Week 10 completed</label>
+      </div></details>
+
+      <details class="week"><summary><div class="wk">Week 11</div><h3>Automobile Shop-Floor Inventory</h3><p>Project 2: transfer the capability to manufacturing.</p></summary><div class="inside">
+        <h4>Learn</h4><ul><li>Production plan and BOM concepts</li><li>Parts consumption history</li><li>Work-floor stock requirement</li><li>Shortage risk and replenishment</li><li>Transfer / purchase recommendations</li></ul>
+        <h4>Build</h4><p>Shop-Floor Parts Requirement Predictor.</p>
+        <label class="check"><input type="checkbox" data-week="11"> Week 11 completed</label>
+      </div></details>
+
+      <details class="week"><summary><div class="wk">Week 12</div><h3>Agentic AI Pipeline + Capstone</h3><p>Bring ML, AI, tools, rules and people together.</p></summary><div class="inside">
+        <h4>Learn</h4><ul><li>Event-driven AI workflow</li><li>ML prediction as a service/tool</li><li>Rules + AI decision support</li><li>Human approval and business action</li><li>Monitoring, audit trail and feedback</li></ul>
+        <h4>Build</h4><p>End-to-End Agentic Inventory Pipeline.</p>
+        <label class="check"><input type="checkbox" data-week="12"> Week 12 completed</label>
+      </div></details>
+
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-title">
+      <div><h2>Portfolio Projects</h2><p>Two substantial business projects are stronger than many disconnected toy notebooks.</p></div>
+    </div>
+    <div class="grid2">
+      <article class="card">
+        <span class="tag">PROJECT 01 • RETAIL</span>
+        <h3>Intelligent Inventory, Demand & Pricing System</h3>
+        <p>Predict demand, evaluate inventory risk, reason about cost/price/margin and turn predictions into business recommendations.</p>
+        <div class="project-flow">
+          <span>Sales History</span><span>Demand Forecast</span><span>Inventory</span><span>Risk</span><span>Cost</span><span>Price</span><span>Margin</span><span>Recommendation</span>
+        </div>
+        <div class="stack"><span>Python</span><span>Pandas</span><span>scikit-learn</span><span>Forecasting</span><span>LLM</span><span>RAG</span><span>Tool Calling</span></div>
+        <h4>Portfolio Evidence</h4>
+        <ul><li>Business problem & KPI definition</li><li>Data preparation notebook</li><li>ML model + evaluation</li><li>Decision logic</li><li>AI assistant</li><li>Architecture diagram + README</li></ul>
+      </article>
+
+      <article class="card">
+        <span class="tag">PROJECT 02 • AUTOMOBILE</span>
+        <h3>Shop-Floor Parts & Inventory Intelligence</h3>
+        <p>Estimate upcoming part requirements using production plans, BOM/consumption behavior and current inventory, then recommend replenishment action.</p>
+        <div class="project-flow">
+          <span>Production Plan</span><span>BOM</span><span>Consumption</span><span>ML Forecast</span><span>Shortage Risk</span><span>Replenishment</span><span>Approval</span>
+        </div>
+        <div class="stack"><span>Manufacturing Data</span><span>ML</span><span>Rules</span><span>Agent</span><span>API</span><span>Human Approval</span></div>
+        <h4>Portfolio Evidence</h4>
+        <ul><li>Parts requirement model</li><li>Shortage-risk dashboard</li><li>Replenishment recommendation engine</li><li>Agent-assisted exception handling</li><li>End-to-end system architecture</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="agentic">
+    <div class="section-title">
+      <div><h2>From ML Prediction to Agentic Business Pipeline</h2><p>The learner should understand which technology performs each responsibility.</p></div>
+    </div>
+    <div class="flow">
+      <div class="node">⚡ Business Event</div><div class="arrow">→</div>
+      <div class="node">📊 Data / API</div><div class="arrow">→</div>
+      <div class="node">📈 ML Prediction</div><div class="arrow">→</div>
+      <div class="node">🧠 AI / Agent</div><div class="arrow">→</div>
+      <div class="node">🛠 Tool / Action</div>
+    </div>
+    <div class="flow" style="margin-top:9px">
+      <div class="node">👤 Human Approval</div><div class="arrow">→</div>
+      <div class="node">✅ Business Action</div><div class="arrow">→</div>
+      <div class="node">📡 Monitor</div><div class="arrow">→</div>
+      <div class="node">🔁 Feedback</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <div><h2>Technology Responsibility</h2><p>A core interview skill is explaining why a step uses ML, AI, deterministic logic or a human—not merely using AI everywhere.</p></div>
+    </div>
+    <div class="grid2">
+      <div class="card"><h3>📈 Machine Learning</h3><p>Predict demand, requirements, probabilities and numeric/business outcomes from historical data.</p></div>
+      <div class="card"><h3>🧮 Rules / Deterministic Code</h3><p>Apply policy, thresholds, calculations, validations and business constraints consistently.</p></div>
+      <div class="card"><h3>🤖 AI / Agent</h3><p>Interpret context, plan, select tools, synthesize information and manage exception-heavy workflows.</p></div>
+      <div class="card"><h3>👤 Human in the Loop</h3><p>Approve financially important or uncertain actions and provide accountability where automation should not act alone.</p></div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="section-title">
+      <div><h2>90-Day Outcome</h2><p>The target is credible evidence of applied capability, not a certificate-only learning story.</p></div>
+    </div>
+    <div class="outcomes">
+      <div class="card"><div class="num">01</div><h3>ML Foundation</h3><p>Explain and implement the complete model lifecycle.</p></div>
+      <div class="card"><div class="num">02</div><h3>Business AI</h3><p>Translate inventory, demand, cost and margin problems into AI solutions.</p></div>
+      <div class="card"><div class="num">03</div><h3>AI Engineering</h3><p>Build RAG, tool calling and agent-based applications.</p></div>
+      <div class="card"><div class="num">04</div><h3>Portfolio</h3><p>Publish two projects, architecture diagrams, READMEs and demo stories.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <span class="tag">CAREER POSITIONING</span>
+      <h2 style="margin-bottom:6px">Do not discard the previous 7 years.</h2>
+      <p class="lead" style="max-width:none">Deployment experience can become an advantage in AI: environment management, releases, integration, operational troubleshooting, production thinking, observability and reliability all matter when AI moves from notebook to enterprise system.</p>
+      <div class="pill-row">
+        <span class="pill">AI / ML Implementation Engineer</span>
+        <span class="pill">AI Application Engineer</span>
+        <span class="pill">ML / AI Deployment Engineer</span>
+        <span class="pill">Junior MLOps / AI Platform Path</span>
+        <span class="pill">Applied AI Engineer</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="floating">
+  <button class="btn" onclick="toggleTheme()">◐</button>
+  <button class="btn" onclick="window.print()">🖨</button>
+  <button class="btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+</div>
+
+<footer>
+  <div class="wrap">
+    <b>TrainUProfessional</b> • Leadership • AI • Enterprise Capability<br>
+    <small>Learn → Build → Apply → Explain → Publish</small>
+  </div>
+</footer>
+
+<script>
+  const checks=[...document.querySelectorAll('input[data-week]')];
+  function loadProgress(){
+    checks.forEach(c=>c.checked=localStorage.getItem('week_'+c.dataset.week)==='1');
+    updateProgress();
+  }
+  function updateProgress(){
+    const done=checks.filter(c=>c.checked).length;
+    document.getElementById('doneCount').textContent=done+'/12';
+    document.getElementById('progressBar').style.width=(done/12*100)+'%';
+  }
+  checks.forEach(c=>c.addEventListener('change',()=>{
+    localStorage.setItem('week_'+c.dataset.week,c.checked?'1':'0'); updateProgress();
+  }));
+  function toggleTheme(){
+    document.body.classList.toggle('light');
+    localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');
+  }
+  let allOpen=false;
+  function toggleAll(){
+    allOpen=!allOpen; document.querySelectorAll('details.week').forEach(d=>d.open=allOpen);
+  }
+  if(localStorage.getItem('theme')==='light') document.body.classList.add('light');
+  loadProgress();
+</script>
+</body>
+</html>
